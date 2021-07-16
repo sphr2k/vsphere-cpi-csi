@@ -14,7 +14,7 @@ More info on the motivation behind creating this integrated chart can be found i
 
 ## Prerequisites
 
-- vSphere 7.0+ (CSI v2.0.0+)
+- vSphere 7.0+
 - Kubernetes cluster version 1.17-1.19 (CSI v2.1.0) or 1.18-1.20 (CSI v2.2.1)
 - VM's with harware version 15+ and vmtools installed on all nodes
 - The ubuntu guest OS is recommended

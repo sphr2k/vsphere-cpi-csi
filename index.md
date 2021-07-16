@@ -1,37 +1,38 @@
-## Welcome to GitHub Pages
+<p align="center">
+  <a href="https://helm.sh"><img src="https://helm.sh/img/helm.svg" alt="Helm logo" title="Helm" height="90"/></a>&nbsp;
+</p>
 
-You can use the [editor on GitHub](https://github.com/sphr2k/vsphere-cpi-csi/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+# Install Helm Repository
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+The `vsphere-cpi-csi` Chart can be installed from [https://sphr2k.github.io/vsphere-cpi-csi/](http://docs.wildfly.org/wildfly-charts/)
 
-### Markdown
+```
+$ helm repo add vsphere-cpi-csi https://sphr2k.github.io/vsphere-cpi-csi/
+"vsphere-cpi-csi" has been added to your repositories
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+$ helm repo update
+...Successfully got an update from the "vsphere-cpi-csi" chart repository
 
-```markdown
-Syntax highlighted code block
+$ helm search repo vsphere-cpi-csi --versions
+NAME                            CHART VERSION   APP VERSION     DESCRIPTION
+vsphere-cpi-csi/vsphere-cpi-csi 2.2.1           2.2.1           vSphere CPI manager and CSI drivers
+vsphere-cpi-csi/vsphere-cpi-csi 2.1.0           2.1.0           vSphere CPI manager and CSI drivers
+````
 
-# Header 1
-## Header 2
-### Header 3
+# Install vSphere CPI+CSI Chart
 
-- Bulleted
-- List
+Install with minimum parameters required:
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```
+$ helm install vsphere-cpi-csi/vsphere-cpi-csi \
+     --namespace kube-system \
+     ./charts/vsphere-cpi-csi/v2.2.1 \
+     --set vcenter.host=vsphere.example.com \
+     --set vcenter.username=johndoe \
+     --set vcenter.password=s3cret \
+     --set vcenter.datacenter=dc1
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+# Documentation
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sphr2k/vsphere-cpi-csi/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+A more complete documentation can be found in the [[GitHub repo]](https://github.com/sphr2k/vsphere-cpi-csi).

@@ -4,7 +4,7 @@
 
 # Install Helm Repository
 
-The `vsphere-cpi-csi` Chart can be installed from [https://sphr2k.github.io/vsphere-cpi-csi/](http://docs.wildfly.org/wildfly-charts/)
+The `vsphere-cpi-csi` Chart can be installed from [https://sphr2k.github.io/vsphere-cpi-csi/](https://sphr2k.github.io/vsphere-cpi-csi/)
 
 ```
 $ helm repo add vsphere-cpi-csi https://sphr2k.github.io/vsphere-cpi-csi/
@@ -35,4 +35,4 @@ $ helm install vsphere-cpi-csi/vsphere-cpi-csi \
 
 # Documentation
 
-A more complete documentation can be found in the [[GitHub repo]](https://github.com/sphr2k/vsphere-cpi-csi).
+A more complete documentation can be found in the [GitHub repo](https://github.com/sphr2k/vsphere-cpi-csi).

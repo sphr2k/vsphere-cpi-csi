@@ -1,4 +1,4 @@
-## vSphere CPI v1.1.0 and CSI v2.0.0 and CSI v2.1.0
+## vSphere CPI v1.1.0 and CSI v2.1.0
 
 This chart deploys both the vSphere CPI (Cloud Provider Interface) manager for vSphere as well as the CSI (Cloud Storage Interface) drivers and optional storageClass.
 

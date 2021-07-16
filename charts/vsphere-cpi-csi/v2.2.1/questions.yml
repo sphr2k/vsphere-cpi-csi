@@ -12,31 +12,35 @@ questions:
     group: "Container Images"
     subquestions:
       - variable: images.vsphereCloudControllerManager
-        default: "gcr.io/cloud-provider-vsphere/cpi/release/manager:v1.1.0"
+        default: "gcr.io/cloud-provider-vsphere/cpi/release/manager:v1.21.0"
         type: string
         label: vsphere-cloud-controller-manager
       - variable: images.csiAttacher
-        default: "quay.io/k8scsi/csi-attacher:v1.1.1"
+        default: "quay.io/k8scsi/csi-attacher:v3.1.0"
         type: string
         label: csi-attacher
       - variable: images.csiDriver
-        default: "gcr.io/cloud-provider-vsphere/csi/release/driver:v1.0.2"
+        default: "gcr.io/cloud-provider-vsphere/csi/release/driver:v2.2.1"
         type: string
         label: vsphere-csi-controller
       - variable: images.livenessProbe
-        default: "quay.io/k8scsi/livenessprobe:v1.1.0"
+        default: "quay.io/k8scsi/livenessprobe:v2.2.0"
         type: string
         label: liveness-probe
       - variable: images.vsphereSyncer
-        default: "gcr.io/cloud-provider-vsphere/csi/release/syncer:v1.0.2"
+        default: "gcr.io/cloud-provider-vsphere/csi/release/syncer:v2.2.1"
         type: string
         label: vsphere-syncer
       - variable: images.csiProvisioner
-        default: "quay.io/k8scsi/csi-provisioner:v1.2.2"
+        default: "quay.io/k8scsi/csi-provisioner:v2.1.1"
         type: string
         label: csi-provisioner
+      - variable: images.csiResizer
+        default: "quay.io/k8scsi/csi-resizer:v1.1.0"
+        type: string
+        label: csi-resizer
       - variable: images.nodeDriverRegistrar
-        default: "quay.io/k8scsi/csi-node-driver-registrar:v1.1.0"
+        default: "quay.io/k8scsi/csi-node-driver-registrar:v2.1.0"
         type: string
         label: node-driver-registrar
   - variable: vcenter.host
@@ -78,6 +82,13 @@ questions:
     type: string
     required: true
     group: "vCenter"
+  - variable: kubelet.path
+    label: Kubelet path
+    description: "E.g. /var/lib/k0s/kubelet"
+    default: "/var/lib/kubelet"
+    type: string
+    required: true
+    group: "Kubelet"
   - variable: storageClass
     default: true
     label: Create matching storageClass
@@ -99,6 +110,7 @@ questions:
         group: "storageClass"
       - variable: storageclass.fstype
         label: Filesystem type
+        description: "Use 'nfs4' to use the File Volume type"
         default: "ext4"
         type: string
         required: true
@@ -113,12 +125,6 @@ questions:
         label: Datastore URL (optional)
         description: "E.g. ds:///vmfs/volumes/vsan:528c27f173c2088e-2126e911985dc3aa/"
         default: ""
-        type: string
-        required: false
-        group: "storageClass"
-      - variable: storageclass.reclaimpolicy
-        label: storageClass reclaim policy
-        default: "Delete"
         type: string
         required: false
         group: "storageClass"

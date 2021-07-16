@@ -35,7 +35,7 @@ More info on the motivation behind creating this integrated chart can be found i
    ```bash
    $ cd vpshere-cpi-csi-helm
    ```
-1. Install the chart of choice (CSI v1.0.2 of v2.0.0), the vcenter config options are required at minimum: 
+1. Install the chart of choice, the vcenter config options are required at minimum: 
    ```bash
    $ helm install vsphere-cpi-csi \
         --namespace kube-system \

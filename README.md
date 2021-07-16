@@ -29,7 +29,7 @@ More info on the motivation behind creating this integrated chart can be found i
 
 1. Add the repo to Helm
    ```
-   helm repo add vsphere-cpi-csi-helm https://sphr2k.github.io/vsphere-cpi-csi-helm/
+   helm repo add vsphere-cpi-csi-helm https://sphr2k.github.io/vsphere-cpi-csi
    ````
 2. Update repos
    ```
@@ -37,7 +37,7 @@ More info on the motivation behind creating this integrated chart can be found i
    ```
 3. Install the chart of choice, the vcenter config options are required at minimum: 
    ```bash
-   $ helm install vsphere-cpi-csi \
+   $ helm install vsphere-cpi-csi/vsphere-cpi-csi \
         --namespace kube-system \
         ./charts/vsphere-cpi-csi/v2.0.0 \
         --set vcenter.host=vsphere.example.com \

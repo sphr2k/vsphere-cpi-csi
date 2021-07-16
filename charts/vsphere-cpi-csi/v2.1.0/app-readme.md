@@ -7,7 +7,7 @@ It uses [upstream VMWare vSphere manifests](https://github.com/kubernetes-sigs/v
 **Pre-requirements:**
 
 * **vSphere 7.0+** 
-* Kubernetes cluster version **1.16+**
+* Kubernetes cluster version **1.18-1.20**
 * VM's with harware version 15+ and `vmtools` installed on all nodes
 * The `ubuntu` guest OS is recommended 
 * **Manual** steps are described in the `Detailed Description` below. 

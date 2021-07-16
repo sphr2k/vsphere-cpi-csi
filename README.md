@@ -29,7 +29,7 @@ More info on the motivation behind creating this integrated chart can be found i
 
 1. Add the repo to Helm
    ```
-   helm repo add vsphere-cpi-csi-helm https://sphr2k.github.io/vsphere-cpi-csi
+   helm repo add vsphere-cpi-csi https://sphr2k.github.io/vsphere-cpi-csi
    ````
 2. Update repos
    ```

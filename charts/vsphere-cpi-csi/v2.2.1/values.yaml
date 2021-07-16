@@ -9,11 +9,11 @@ images:
   nodeDriverRegistrar: "quay.io/k8scsi/csi-node-driver-registrar:v2.1.0"
 
 vcenter:
-  host: vcenter.local
+  # host: vcenter.example.com
   insecurehost: true
-  username: usernmame@domain
-  password: password
-  datacenter: DatacenterName
+  # username: admin 
+  # password: root
+  # datacenter: DC1
 
 kubelet:
   path: /var/lib/kubelet

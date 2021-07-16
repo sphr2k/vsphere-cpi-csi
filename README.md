@@ -22,20 +22,20 @@ More info on the motivation behind creating this integrated chart can be found i
 
 ## Installing the Chart using Rancher catalog
 
-1. Add this repo (https://github.com/stefanvangastel/vsphere-cpi-csi-helm.git) as a Helm 3 catalog.
+1. Add the Helm repo (https://sphr2k.github.io/vsphere-cpi-csi-helm/) as a Helm 3 catalog.
 1. Launch the app and follow the instructions
 
 ## Installing the Chart using Helm 3.0+
 
-1. Clone this repository: 
-   ```bash
-   $ git clone https://github.com/stefanvangastel/vsphere-cpi-csi-helm.git
+1. Add the repo to Helm
    ```
-1. Enter the directory: 
-   ```bash
-   $ cd vpshere-cpi-csi-helm
+   helm repo add vsphere-cpi-csi-helm https://sphr2k.github.io/vsphere-cpi-csi-helm/
+   ````
+2. Update repos
    ```
-1. Install the chart of choice, the vcenter config options are required at minimum: 
+   helm repo update
+   ```
+3. Install the chart of choice, the vcenter config options are required at minimum: 
    ```bash
    $ helm install vsphere-cpi-csi \
         --namespace kube-system \
